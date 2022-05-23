@@ -1,0 +1,112 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 24%;
+  height: 100px;
+  min-width: 250px;
+  margin: 3% 0;
+  list-style: none;
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.todoList {
+  display: grid;
+  padding: 0 40px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 2vh 0 0 0;
+}
+.description {
+  width: 100%;
+}
+.btnContainer {
+  display: flex;
+  position: absolute;
+  right: 5px;
+  top: 2px;
+}
+.deleteBtn {
+  min-width: 20px;
+  min-height: 20px;
+  background-image: url('../../images/delete-todo-button.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  background-size: 120%;
+}
+.deleteBtn:active {
+  transform: scale(0.8);
+}
+.completeLabel {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  cursor: pointer;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-image: url('../../images/checkbox-completness.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.completeInput {
+  display: none;
+}
+.editBtn {
+  width: 20px;
+  height: 20px;
+  background-image: url('../../images/edit-todo-button.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  background-size: 95%;
+}
+.createdAt {
+  color: var(--main-text-color);
+  margin-left: 3%;
+  margin-top: 1%;
+}
+.description {
+  padding: 0 2%;
+  color: var(--main-text-color);
+  font-size: 1.3rem;
+  height: 96%;
+  line-height: 1.2;
+  word-break: break-all;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 767px) {
+  .container {
+    width: 95%;
+    margin-bottom: 10px;
+  }
+  .todoList {
+    padding: 0;
+    grid-template-columns: 1fr;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 920px) {
+  .todoList {
+    grid-template-columns: 1fr 1fr;
+  }
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+  }
+}
+@media only screen and (min-width: 921px) and (max-width: 1199px) {
+  .todoList {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

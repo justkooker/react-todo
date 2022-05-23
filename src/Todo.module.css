@@ -1,0 +1,16 @@
+
+:root {
+  --main-background-color: rgb(105, 240, 71);
+  --main-text-color: white;
+  --main-border-color: black;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: var(--main-background-color);
+  min-width: 250px;
+}
+

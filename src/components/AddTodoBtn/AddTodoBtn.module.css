@@ -1,0 +1,33 @@
+.addTodoBtn {
+  width: 100px;
+  color: var(--main-text-color);
+  background-color: inherit;
+  border: none;
+  font-size: 1.3rem;
+  text-transform: capitalize;
+  cursor: pointer;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  text-align: left;
+  margin-right: 10px;
+}
+.addTodoBtn:hover {
+  border-bottom: 1px solid var(--main-text-color);
+}
+@media only screen and (max-width: 768px) {
+  .addTodoBtn {
+    position: fixed;
+    background-image: url('../../images//add-todo-button.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(34, 151, 52);
+    border-radius: 50px;
+    box-shadow: 0 0 2px black;
+    bottom: 40px;
+    right: 40px;
+    z-index: 1200;
+  }
+}

@@ -1,0 +1,51 @@
+.container {
+  position: absolute;
+  border-top: 1px solid var(--main-text-color);
+  padding: 10px;
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  padding-left: 3px;
+  background-color: rgb(124, 228, 98);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  animation-name: dropdown;
+  animation-duration: 2s;
+  z-index: 99;
+}
+.filterInput {
+  display: none;
+}
+.filterLabel {
+  width: auto;
+  font-size: 1.2rem;
+  color: var(--main-text-color);
+  text-transform: capitalize;
+  line-height: 1.6;
+}
+.filterLabel:hover {
+  cursor: pointer;
+}
+@keyframes dropdown {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media only screen and (max-width: 401px) {
+  .container {
+    top: 34px;
+  }
+}
+@media only screen and (min-width: 401px) and (max-width: 767px) {
+  .container {
+    top: 39px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .container {
+    top: 49px;
+  }
+}
