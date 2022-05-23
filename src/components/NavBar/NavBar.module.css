@@ -126,8 +126,7 @@ header button:hover {
   }
 
   .filterContainer {
-    margin-right: 90px;
-    /* position: relative; */
+    margin-right: 0;
   }
   header input {
     width: 120px;
@@ -135,6 +134,7 @@ header button:hover {
     margin-left: auto;
     margin-right: auto;
   }
+ 
   .nav {
     min-width: 100px;
   }
@@ -182,7 +182,7 @@ header button:hover {
     height: 25px;
   }
   .filterContainer {
-    margin-right: 110px;
+    margin-right: 20px;
     height: 100%;
   }
   .nav {
