@@ -16,6 +16,7 @@ import AddTodoBtn from 'components/AddTodoBtn/AddTodoBtn';
 const NavBar = function () {
   const isAuth = useSelector(state => state.authState.isAuth);
   const userName = useSelector(state => state.authState.user.name);
+
   const [filterValue, setFilterValue] = useState('');
   const [dropdownFilterStatus, setDropdownFilterStatus] = useState(false);
   const completenessInitialState = {
@@ -124,7 +125,7 @@ const NavBar = function () {
           style={{ width: `${userName.length - 2}vw` }}
         >
           <NavLink className={styles.user} to={routes.user}>
-            {userName}
+            {userName.length > 8 ? `${userName.substring(0, 8)}...` : userName}
           </NavLink>
           <NavLink to={routes.home}>
             {mobileView ? (

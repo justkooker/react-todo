@@ -1,4 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { toast } from 'react-toastify';
+
 import authApiServices from 'services/todo-api-services';
 import { getAllTodos } from './todoSlice';
 export const todoRegister = createAsyncThunk(
@@ -12,6 +14,7 @@ export const todoRegister = createAsyncThunk(
         dispatch(todoCurrentUser(token));
       }
     } catch (error) {
+      toast('This email is accupied')
       return rejectWithValue(error.message);
     }
   }
@@ -26,6 +29,7 @@ export const todoLogin = createAsyncThunk(
         dispatch(login(response.data));
       }
     } catch (error) {
+      
       return rejectWithValue(error.message);
     }
   }

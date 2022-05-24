@@ -134,7 +134,7 @@ header button:hover {
     margin-left: auto;
     margin-right: auto;
   }
- 
+
   .nav {
     min-width: 100px;
   }
@@ -169,14 +169,11 @@ header button:hover {
     margin-left: 8px;
   }
 }
-@media only screen and (min-width: 768px)  {
+@media only screen and (min-width: 768px) {
   header {
     padding: 0 10px;
     min-height: 50px;
   }
-.filter {
-  /* height: 100%; */
-}
   header input {
     min-width: 180px;
     height: 25px;

@@ -18,14 +18,12 @@ const RegisterView = () => {
     age: '',
   };
   const [user, setUser] = useState(initialState);
-  const [disabledBtn, setDisabledBtn] = useState(true);
   const handleChangeInput = e => {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
     formVerification();
   };
-  const formNotification = e => {
-    e.preventDefault();
+  const formNotification = () => {
     const { name, email, age, password, passwordVerification } = user;
 
     if (password !== passwordVerification) {
@@ -33,7 +31,11 @@ const RegisterView = () => {
       toast('Passwords do not match');
       return;
     }
-    if (name.length < 4) {
+    if (password.length < 8 || passwordVerification.length < 8) {
+      toast('Too short password');
+      return;
+    }
+    if (name.length < 2) {
       toast('Too short name');
       return;
     }
@@ -49,35 +51,36 @@ const RegisterView = () => {
   const formVerification = () => {
     const { name, email, age, password, passwordVerification } = user;
 
-    if (password !== passwordVerification) {
-      setDisabledBtn(true);
-      return;
-    }
-    if (name.length < 3) {
-      setDisabledBtn(true);
-      return;
+    if (name.length < 2) {
+      // setDisabledBtn(true);
+      return false;
     }
     if (!email.includes('@')) {
-      setDisabledBtn(true);
-      return;
+      // setDisabledBtn(true);
+      return false;
+    }
+    if (password !== passwordVerification) {
+      // setDisabledBtn(true);
+      return false;
     }
     if (age < 18) {
-      setDisabledBtn(true);
-      return;
+      // setDisabledBtn(true);
+      return false;
     }
-    setDisabledBtn(false);
+    // setDisabledBtn(false);
+    return true;
   };
   const onFormSubmit = e => {
     e.preventDefault();
-    formVerification();
-    dispatch(todoRegister(user));
-    setUser(initialState);
+    if (formVerification()) {
+      dispatch(todoRegister(user));
+      setUser(initialState);
+      return;
+    }
+    formNotification();
   };
   return (
-    <form
-      onSubmit={disabledBtn ? formNotification : onFormSubmit}
-      className={commonStyles.form}
-    >
+    <form onSubmit={onFormSubmit} className={commonStyles.form}>
       <h1 className={commonStyles.capture}>registration</h1>
       <input
         onChange={handleChangeInput}
@@ -85,6 +88,7 @@ const RegisterView = () => {
         name="name"
         value={user.name}
         placeholder=" Name"
+        autoFocus
       />
       <input
         onChange={handleChangeInput}
