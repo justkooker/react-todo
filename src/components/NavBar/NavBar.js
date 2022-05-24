@@ -124,7 +124,7 @@ const NavBar = function () {
           className={styles.nav}
           style={{ width: `${userName.length - 2}vw` }}
         >
-          <NavLink className={styles.user} to={routes.user}>
+          <NavLink  className={styles.user} to={routes.user}>
             {userName.length > 8 ? `${userName.substring(0, 8)}...` : userName}
           </NavLink>
           <NavLink to={routes.home}>
