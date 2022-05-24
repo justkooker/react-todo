@@ -5,7 +5,7 @@ import {
   addTodoDb,
   getAllTodos,
 } from 'redux/features/todoSlice';
-import styles from './TodoCreator.module.css';
+import styles from '../../commonStyles/todoFormStyles.module.css';
 const TodoCreator = () => {
   const dispatch = useDispatch();
   const [todo, setTodo] = useState({

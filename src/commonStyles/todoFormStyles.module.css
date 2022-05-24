@@ -1,12 +1,16 @@
 .description {
-    margin-bottom: 15px;
-    height: 25px;
+   
     border-radius: 5px;
+    height: 150px;
+    width: 250px;
+    outline: transparent;
+    margin-bottom: 5px;
   }
   .cancelBtn,
   .submitBtn {
     height: 25px;
     font-size: 16px;
+    width: 49%;
     text-transform: capitalize;
     margin-bottom: 5px;
     background-color: rgb(14, 7, 7);
@@ -29,16 +33,4 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-  }
-  @media only screen and (max-width: 600px) {
-    .cancelBtn,
-    .submitBtn {
-      width: 49%;
-    }
-  
-    .description {
-      height: 100px;
-      width: 250px;
-      outline: transparent;
-    }
   }
